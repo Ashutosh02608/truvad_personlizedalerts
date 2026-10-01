@@ -1,0 +1,476 @@
+.alertsContainer {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+/* Header */
+.headerBlock {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.kickerTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #64748b;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-mono), monospace;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0b1329;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #4b5563;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+/* Main Form Card */
+.formCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05), 0 20px 48px -10px rgba(15, 23, 42, 0.07);
+  padding: 2rem 2.25rem;
+}
+
+/* Filter and action toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 1.5rem;
+}
+
+.regionTabs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.regionTab {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #475569;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.regionTab:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.regionTabActive {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+.rightControls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.searchBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.65rem;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.searchInput {
+  padding: 0.4rem 0.75rem 0.4rem 2rem;
+  font-size: 0.8rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #0f172a;
+  outline: none;
+  width: 170px;
+  transition: border-color 0.2s ease, width 0.2s ease;
+}
+
+.searchInput:focus {
+  border-color: #3b82f6;
+  width: 210px;
+}
+
+.actionLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.textActionBtn {
+  color: #2563eb;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+}
+
+.textActionBtn:hover {
+  text-decoration: underline;
+}
+
+/* Stats Counter Row */
+.selectionSummary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  font-size: 0.82rem;
+  color: #475569;
+}
+
+.badgeSelected {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #bfdbfe;
+  font-size: 0.76rem;
+}
+
+/* Checkbox Grid */
+.regulatorsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 0.35rem;
+}
+
+.regulatorCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  user-select: none;
+  position: relative;
+}
+
+.regulatorCard:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.regulatorCardActive {
+  border-color: #0f172a;
+  background: #fafaf9;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+.checkboxContainer {
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.customCheckbox {
+  width: 19px;
+  height: 19px;
+  border-radius: 5px;
+  border: 1.5px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  transition: all 0.15s ease;
+}
+
+.customCheckboxChecked {
+  background: #0f172a;
+  border-color: #0f172a;
+  color: #ffffff;
+}
+
+.regCardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.regTopLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.regAcronym {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: 0.02em;
+}
+
+.regFlag {
+  font-size: 1rem;
+}
+
+.regFullName {
+  font-size: 0.75rem;
+  color: #475569;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+.regDomainTag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 0.12rem 0.45rem;
+  border-radius: 4px;
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+
+/* Frequency Options Section */
+.cadenceSection {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.15rem 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.cadenceTitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #334155;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.75rem;
+}
+
+.cadenceOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cadenceOption {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cadenceOptionActive {
+  background: #0f172a;
+  border-color: #0f172a;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Email Input Section at the end */
+.emailSection {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1.75rem;
+}
+
+.emailSectionLabel {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.4rem;
+}
+
+.emailSectionSub {
+  font-size: 0.76rem;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.emailFormRow {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.emailInputWrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.mailIcon {
+  position: absolute;
+  left: 1rem;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.emailInput {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.75rem;
+  font-size: 0.92rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.emailInput:focus {
+  border-color: #0f172a;
+  box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.08);
+}
+
+.emailSubmitBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #0d1527;
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.85rem 1.6rem;
+  border-radius: 9px;
+  border: 1px solid #1e293b;
+  box-shadow: 0 4px 12px rgba(13, 21, 39, 0.2);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.emailSubmitBtn:hover {
+  background: #1b263b;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(13, 21, 39, 0.3);
+}
+
+.privacyFootnote {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+/* Success Confirmation Banner */
+.successBanner {
+  background: #ecfdf5;
+  border: 1.5px solid #a7f3d0;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.successHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #065f46;
+  margin-bottom: 0.35rem;
+}
+
+.successBody {
+  font-size: 0.82rem;
+  color: #047857;
+  line-height: 1.5;
+}
+
+.subscribedTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.subscribedTag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: #d1fae5;
+  color: #065f46;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .formCard {
+    padding: 1.5rem 1.25rem;
+  }
+  .title {
+    font-size: 1.75rem;
+  }
+  .emailFormRow {
+    flex-direction: column;
+  }
+  .emailSubmitBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

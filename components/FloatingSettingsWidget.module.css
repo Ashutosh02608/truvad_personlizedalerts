@@ -1,0 +1,86 @@
+.floatingGearBtn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #0d1527;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(13, 21, 39, 0.35);
+  border: 1px solid #1e293b;
+  cursor: pointer;
+  z-index: 90;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floatingGearBtn:hover {
+  transform: scale(1.08) rotate(45deg);
+  background: #1b263b;
+  box-shadow: 0 12px 30px rgba(13, 21, 39, 0.45);
+}
+
+.popupMenu {
+  position: fixed;
+  bottom: 84px;
+  right: 24px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.15);
+  z-index: 95;
+  width: 260px;
+  animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menuHeader {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 0.5rem;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: #334155;
+  padding: 0.5rem 0.25rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.15s ease;
+}
+
+.menuItem:hover {
+  background: #f8fafc;
+}
+
+.statusPill {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #10b981;
+  background: #ecfdf5;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
