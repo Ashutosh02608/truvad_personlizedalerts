@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createOtp } from "@/lib/otpStore";
-import { sendOtpEmail, isSmtpConfigured } from "@/lib/mailClient";
+import { sendOtpEmail } from "@/lib/mailClient";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -29,19 +29,18 @@ export async function POST(request) {
     }
 
     // Send email via Gmail SMTP (Nodemailer)
-    if (isSmtpConfigured) {
-      try {
-        await sendOtpEmail({ to: normalizedEmail, code });
-      } catch (err) {
-        console.error("Email delivery failed:", err.message);
-        return NextResponse.json(
-          { error: `Email delivery failed: ${err.message}` },
-          { status: 500 }
-        );
-      }
-    } else {
-      console.info(`[SANDBOX OTP] Generated code for ${normalizedEmail}: ${code}`);
+    const emailResult = await sendOtpEmail({ to: normalizedEmail, code });
+    if (!emailResult.sent) {
+      console.error("Email delivery failed:", emailResult);
+      return NextResponse.json(
+        { 
+          error: `Email delivery failed: ${emailResult.reason || emailResult.error || "Could not reach mail server"}. Check your SMTP credentials in .env.local and restart the server.` 
+        },
+        { status: 500 }
+      );
     }
+
+    console.log(`[SMTP] Verification email sent to ${normalizedEmail}, messageId: ${emailResult.messageId}`);
 
     return NextResponse.json({
       success: true,
